@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Waqas Alpha — AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="man">
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-mark">WA</div><div><b>Waqas Alpha</b><small>Personal AI</small></div></div>
+    <button class="new-chat" id="newChat">＋ New chat</button>
+    <nav>
+      <button class="nav-item active">⌂ <span>Chat</span></button>
+      <button class="nav-item">◷ <span>History</span></button>
+      <button class="nav-item" id="imageNav">✦ <span>Image Studio</span></button>
+    </nav>
+    <div class="sidebar-bottom">
+      <button class="nav-item" id="settingsBtn">⚙ <span>Settings</span></button>
+      <div class="creator">Created by <strong>Syed At Waqas</strong></div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div class="mobile-brand">Waqas Alpha</div>
+      <div class="model-pill"><span class="live-dot"></span> Alpha • Fast</div>
+      <button class="icon-btn" id="callBtn" title="AI Call">☎</button>
+      <button class="icon-btn" id="micBtn" title="Microphone">🎙</button>
+      <button class="avatar">WA</button>
+    </header>
+
+    <section class="chat" id="chat">
+      <div class="welcome">
+        <div class="orb">WA</div>
+        <h1>What can I help you with?</h1>
+        <p>Fast answers, voice conversations and creative tools — all in one place.</p>
+        <div class="suggestions">
+          <button>✦ Write something</button><button>⌁ Explain a topic</button><button>▣ Create an image</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="composer-wrap">
+      <div class="composer">
+        <button class="round" id="attachBtn">＋</button>
+        <textarea id="prompt" rows="1" placeholder="Message Waqas Alpha…"></textarea>
+        <button class="round mic" id="composerMic">🎙</button>
+        <button class="send" id="sendBtn">➤</button>
+      </div>
+      <div class="composer-note">Waqas Alpha can make mistakes. Check important information.</div>
+    </div>
+  </main>
+</div>
+
+<div class="overlay" id="overlay"></div>
+<aside class="settings" id="settings">
+  <div class="settings-head"><div><h2>Settings</h2><p>Make Waqas Alpha yours.</p></div><button class="close" id="closeSettings">×</button></div>
+
+  <div class="setting-section">
+    <label>Appearance</label>
+    <div class="theme-grid">
+      <button class="theme-card selected" data-set-theme="man"><span class="theme-preview man-preview">M</span><b>Man</b><small>Bold • Midnight</small></button>
+      <button class="theme-card" data-set-theme="girl"><span class="theme-preview girl-preview">G</span><b>Girl</b><small>Elegant • Aurora</small></button>
+    </div>
+  </div>
+
+  <div class="setting-section">
+    <label>AI behavior</label>
+    <div class="row"><span>Fast streaming</span><input type="checkbox" checked></div>
+    <div class="row"><span>Remember conversation</span><input type="checkbox" checked></div>
+    <div class="row"><span>Auto-regenerate</span><input type="checkbox"></div>
+    <div class="row"><span>Markdown / <strong>bold</strong> support</span><input type="checkbox" checked></div>
+  </div>
+
+  <div class="setting-section">
+    <label>Voice & Call</label>
+    <div class="row"><span>Microphone</span><input id="micToggle" type="checkbox" checked></div>
+    <div class="row"><span>Voice replies</span><input type="checkbox" checked></div>
+    <div class="row"><span>Auto-speak</span><input type="checkbox"></div>
+    <div class="row"><span>Push to talk</span><input type="checkbox"></div>
+    <button class="wide-btn" id="startCall">☎ Start AI Call</button>
+  </div>
+
+  <div class="setting-section">
+    <label>Personalization</label>
+    <div class="input-row"><span>AI name</span><input value="Waqas Alpha"></div>
+    <div class="input-row"><span>Creator</span><input value="Professor Waqas" readonly></div>
+    <div class="input-row"><span>Response style</span><select><option>Balanced</option><option>Fast & concise</option><option>Detailed</option><option>Creative</option></select></div>
+  </div>
+
+  <div class="setting-section">
+    <label>Creative tools</label>
+    <button class="wide-btn secondary" id="imageStudio">✦ Open Image Studio</button>
+  </div>
+
+  <div class="about">Waqas Alpha v1.0<br><strong>Created by Syed At Waqas</strong></div>
+</aside>
+
+<div class="call-modal" id="callModal">
+  <div class="call-card">
+    <div class="call-orb">WA</div><h2>Waqas Alpha</h2><p>AI Call Mode</p>
+    <div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="call-actions"><button id="callMute">🎙 Mute</button><button class="end" id="endCall">End Call</button></div>
+  </div>
+</div>
+
+<div class="image-modal" id="imageModal">
+  <div class="image-card"><button class="close" id="closeImage">×</button><div class="orb small">✦</div><h2>Image Studio</h2><p>Describe the image you want to create.</p>
+    <textarea id="imagePrompt" placeholder="A cinematic futuristic city at night…"></textarea>
+    <button class="wide-btn" id="generateImage">✦ Generate Image</button>
+    <small class="hint">Connect your preferred image-generation API in <code>app.js</code> to enable real generation.</small>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
