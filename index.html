@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Waqas Zombie 3D</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="hud">
+    <div class="topbar">
+      <div>❤️ <span id="health">100</span></div>
+      <div>🧟 Wave <span id="wave">1</span></div>
+      <div>🔫 <span id="ammo">30</span></div>
+      <div>⭐ <span id="score">0</span></div>
+    </div>
+    <div id="message">WAQAS ZOMBIE 3D</div>
+    <div id="crosshair">+</div>
+    <div id="help">WASD move • Mouse aim • Click shoot • R restart</div>
+  </div>
+
+  <div id="mobile">
+    <div id="stick"><div id="knob"></div></div>
+    <button id="fire">FIRE</button>
+  </div>
+
+  <div id="startScreen">
+    <h1>WAQAS ZOMBIE 3D</h1>
+    <p>Survive the zombie waves.</p>
+    <button id="startBtn">START GAME</button>
+    <small>Desktop: WASD + mouse + click<br>Mobile: joystick + FIRE</small>
+  </div>
+
+  <script type="module" src="game.js"></script>
+</body>
+</html>
