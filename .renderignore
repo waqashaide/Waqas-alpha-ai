@@ -1,0 +1,15 @@
+.git
+.venv
+venv
+__pycache__
+*.pyc
+*.db
+.env
+config/.env
+output/raw/*
+output/final/*
+output/clips/*
+output/.models
+!output/raw/.gitkeep
+!output/final/.gitkeep
+!output/clips/.gitkeep
